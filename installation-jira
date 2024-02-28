@@ -1,0 +1,98 @@
+jira installtion:
+
+
+
+# apt full-upgrade
+# apt install mysql-server fontconfig fontconfig-config fonts-dejavu-core libfontconfig1 net-tools
+
+# mysql
+mysql> CREATE DATABASE jiradb;
+mysql> CREATE USER jirauser@localhost IDENTIFIED BY 'passw0rdJira@#e';
+mysql> GRANT ALL ON jiradb.* TO jirauser@localhost WITH GRANT OPTION;
+mysql> FLUSH PRIVILEGES;
+mysql> \q
+
+install mysql Connector: 
+# wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j-8.1.0.tar.gz
+# tar -xzvf mysql-connector-j-8.1.0.tar.gz
+# cp mysql-connector-j-8.1.0/mysql-connector-j-8.1.0.jar /opt/atlassian/jira/lib
+######################################################
+
+# chmod 700 atlassian-jira-software-9.14.0-x64.bin
+
+
+''''''''
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+Unpacking JRE ...
+Starting Installer ...
+
+This will install Jira Software 9.14.0 on your computer.
+OK [o, Enter], Cancel [c]
+
+Click Next to continue, or Cancel to exit Setup.
+
+Choose the appropriate installation or upgrade option.
+Please choose one of the following:
+Express Install (use default settings) [1], Custom Install (recommended for advanced users) [2, Enter], Upgrade an existing  Jira installation [3]
+
+
+Select the folder where you would like Jira Software to be installed.
+Where should Jira Software be installed?
+[/opt/atlassian/jira]
+
+
+Default location for Jira Software data
+[/var/atlassian/application-data/jira]
+
+
+Configure which ports Jira Software will use.
+Jira requires two TCP ports that are not being used by any other
+applications on this machine. The HTTP port is where you will access Jira
+through your browser. The Control port is used to startup and shutdown Jira.
+Use default ports (HTTP: 8080, Control: 8005) - Recommended [1, Enter], Set custom value for HTTP and Control ports [2]
+
+
+Jira can be run in the background.
+You may choose to run Jira as a service, which means it will start
+automatically whenever the computer restarts.
+Install Jira as Service?
+Yes [y, Enter], No [n]
+
+
+Details on where Jira Software will be installed and the settings that will be used.
+Installation Directory: /opt/atlassian/jira
+Home Directory: /var/atlassian/application-data/jira
+HTTP Port: 8080
+RMI Port: 8005
+Install as service: Yes
+Install [i, Enter], Exit [e]
+
+
+Extracting files ...
+
+/opt/atlassian/jira/bin/tcnative-1.dll
+
+The file already exists.
+
+Would you like Setup to overwrite it?
+Yes [y], Yes to All [ya], No [n], No to All [na]
+ya
+
+Please wait a few moments while Jira Software is configured.
+
+Start Jira Software 9.14.0 now?
+Yes [y, Enter], No [n]
+n
+
+'''''''''
+
+
+
+
+
+link crack jira : 
+https://github.com/guywiththecrack/jira-crack
+
+
+
+mv /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/atlassian-extras-3.4.6.jar /opt/atlassian/jira/atlassian-jira/WEB-INF/lib/atlassian-extras-3.4.6.jar.bkp
